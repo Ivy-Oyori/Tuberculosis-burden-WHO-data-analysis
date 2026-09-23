@@ -1,18 +1,16 @@
-ustomer Shopping Behaviour Analysis
+Global Tuberculosis Burden Analysis (1990–2013)
 Project Overview
 
-An end-to-end ETL and data analytics project using customer shopping behaviour data.
+An end-to-end data analysis project examining the global burden of tuberculosis using World Health Organization (WHO) data covering 219 countries and 5,120 records from 1990 to 2013.
 
-Python and Pandas were used to extract, clean, and transform raw CSV/Excel data before loading the processed data directly into PostgreSQL through a Python database connection. The PostgreSQL database was then connected directly to Power BI and Tableau for data analysis, visualization, and reporting.
+The project uses Python, Pandas, PostgreSQL, SQL, Power BI, and Tableau to clean, validate, analyze, and visualize TB trends, regional differences, HIV co-infection, case detection, and mortality.
 
-ETL Pipeline
-Raw CSV / Excel
+Data Analysis Workflow
+WHO Raw Dataset
        ↓
 Python + Pandas
        ↓
-Extract
-       ↓
-Clean & Transform
+Data Cleaning & Validation
        ↓
 PostgreSQL
        ↓
@@ -23,70 +21,47 @@ Power BI + Tableau
 Dashboards & Insights
 Data Preparation
 
-The raw customer shopping behaviour dataset was processed using Python and Pandas.
+Python and Pandas were used to prepare the raw WHO dataset for analysis.
 
 Key tasks included:
 
-Cleaning and preparing the raw dataset
-Standardizing and organizing data fields
-Checking and converting data types
-Handling data quality issues
-Creating new analytical columns
-Creating True/False indicators for subscription status
-Creating True/False indicators for whether a discount was applied
-Preparing the processed dataset for database storage and analysis
-Database
+Removed empty and unnecessary columns
+Standardized column names
+Verified data types
+Checked for duplicate records
+Identified missing HIV co-infection estimates
+Flagged 65 countries without HIV estimates
+Excluded missing HIV estimates from HIV-related averages rather than treating them as zero
+SQL & Database Analysis
 
-The transformed data was loaded directly into PostgreSQL using Python, rather than manually importing the processed CSV into the database.
+The cleaned dataset was loaded into PostgreSQL, where SQL queries were used to analyze:
 
-SQL was then used to query and analyze the stored data.
-
+Global TB incidence, prevalence, and mortality trends
+Regional and country-level differences
+TB/HIV co-infection
+Case detection and mortality
+WHO estimate uncertainty
+Changes in TB indicators over time
 Visualization
 
-The PostgreSQL database was connected directly to:
+The analysis was presented using Power BI and Tableau, including:
 
-Power BI for dashboards and interactive reporting
-Tableau for additional data visualization and analysis
+Trend charts
+Regional comparisons
+Geographic maps
+HIV/TB analysis
+Case detection and mortality analysis
+Data quality and uncertainty visualizations
+Key Findings
+Global TB incidence, prevalence, and mortality rates declined between 1990 and 2013.
+Africa and South East Asia carried the highest TB burden across the period.
+HIV co-infection was heavily concentrated in Africa.
+Case detection and mortality showed a negative relationship across all six WHO regions, although the strength varied by region.
+65 countries had no HIV co-infection estimate, representing an important limitation when interpreting global HIV/TB statistics.
+Tools & Technologies
 
-The analysis explored customer demographics, purchasing behaviour, spending patterns, subscriptions, discounts, product categories, and other customer attributes.
-
-Technology Stack
-
-Python | Pandas | PostgreSQL | SQL | Power BI | Tableau | Excel | CSV
+Python | Pandas | PostgreSQL | SQL | Power BI | Tableau | Excel
 
 Skills Demonstrated
-ETL
-Data Extraction
-Data Cleaning
-Data Transformation
-Data Loading
-Python & Pandas
-SQL
-PostgreSQL
-Data Visualization
-Business Intelligence
-Dashboard Development
-Exploratory Data Analysis
-Project Architecture
-                 ETL PIPELINE
-                      │
-                      ▼
-              CSV / Excel Data
-                      │
-                      ▼
-                Python / Pandas
-                      │
-             Extract & Transform
-                      │
-                      ▼
-                 PostgreSQL
-                      │
-                  SQL Queries
-                      │
-            ┌─────────┴─────────┐
-            ▼                   ▼
-         Power BI             Tableau
-            │                   │
-            └─────────┬─────────┘
-                      ▼
-              Data Insights
+
+Data Cleaning · Data Validation · Exploratory Data Analysis · SQL · PostgreSQL · Statistical Analysis · Data Visualization · Dashboard Development · Data Storytelling
